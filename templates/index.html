@@ -8,13 +8,18 @@
     <title>Home_Orders</title>
 </head>
 <body>
-    <h1>Total orders</h1>
+    <h1>Total avocado orders</h1>
     <h2> We have the following orders:
+        <h3>Name</h3>
         {% for order in total_orders %}
             <div>
                 <p>
-                    <a href="/orders/{{loop.index0}}"> {{ order._customer_name }} {{ order._order_date }} {{ order._quantity }} </a> 
+                    <a href="/orders/{{loop.index0}}"> {{ order._customer_name }}</a> 
                 </p>
+            </div>
+            <div>
+                <p> Order date: {{ order._order_date }}</p>
+                <p> Quantity: {{ order._quantity }}</p>
             </div>
         {% endfor %}
     </h2>
