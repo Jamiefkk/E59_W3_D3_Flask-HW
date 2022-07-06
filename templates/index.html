@@ -23,5 +23,19 @@
             </div>
         {% endfor %}
     </h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Order Date</th>
+            <th>Quantity</th>
+        </tr>
+        {% for order in total_orders %}
+            <tr>
+                <th><a href="/orders/{{loop.index0}}"> {{ order._customer_name }}</a> </th>
+                <th>{{ order._order_date }}</th>
+                <th>{{ order._quantity }}</th>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
